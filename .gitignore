@@ -9,6 +9,8 @@ dist
 output
 build
 
+*.user
+
 *.csproj.user
 
 *.resharper.user
