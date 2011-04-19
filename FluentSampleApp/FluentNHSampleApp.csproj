@@ -64,6 +64,8 @@
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderStatus.cs" />
     <Compile Include="Domain\Product.cs" />
+    <Compile Include="Mapping\HiLoIdConvention.cs" />
+    <Compile Include="Mapping\EnumConvention.cs" />
     <Compile Include="Mapping\Overrides\OrderOverride.cs" />
     <Compile Include="Mapping\StoreConfiguration.cs" />
     <Compile Include="Net4Collections.cs" />

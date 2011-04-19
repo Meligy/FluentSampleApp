@@ -26,8 +26,7 @@ namespace FluentNHSampleApp
             new SchemaExport(configuration).Create(true, true);
 
             Console.WriteLine("Persiting some objects");
-            ISessionFactory sf = configuration.BuildSessionFactory();
-
+            using (ISessionFactory sf = configuration.BuildSessionFactory())
             using (ISession s = sf.OpenSession())
             using (ITransaction tx = s.BeginTransaction())
             {
@@ -44,7 +43,11 @@ namespace FluentNHSampleApp
                                           }
                                   };
 
+                var order = new Order() {Date = DateTime.Now};
+                order.Items.Add(new OrderItem {Product = product});
+
                 s.Save(product);
+                s.Save(order);
 
                 tx.Commit();
             }
@@ -58,7 +61,9 @@ namespace FluentNHSampleApp
                 .Mappings(
                     m => m.AutoMappings.Add(
                         AutoMap.AssemblyOf<Program>(storeConfiguration)
+                            .Conventions.Add<EnumConvention>()
                             .Conventions.Add<CollectionConvention>()
+                            .Conventions.Add<HiLoIdConvention>()
                             .UseOverridesFromAssembly(typeof (OrderOverride).Assembly))
                              .ExportTo(Console.Out)
                 )
