@@ -11,12 +11,6 @@ namespace FluentNHSampleApp.Mapping
         {
             instance.AsSet();
             instance.Cascade.All();
-
-            // Workaround for FNH problem when mapping collections of simple 
-            //  .NET types, not collections of entities.
-            if (instance.Key.EntityType.Assembly
-                            == typeof(string).Assembly) // BCL type
-                instance.Name("Value");
         }
 
         #endregion

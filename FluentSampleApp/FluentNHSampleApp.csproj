@@ -41,7 +41,7 @@
       <HintPath>..\packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Iesi.Collections.3.2.0.1001\lib\Net35\Iesi.Collections.dll</HintPath>
+      <HintPath>..\packages\Iesi.Collections.3.2.0.1002\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll</HintPath>
@@ -64,8 +64,6 @@
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderStatus.cs" />
     <Compile Include="Domain\Product.cs" />
-    <Compile Include="Mapping\HiLoIdConvention.cs" />
-    <Compile Include="Mapping\EnumConvention.cs" />
     <Compile Include="Mapping\Overrides\OrderOverride.cs" />
     <Compile Include="Mapping\StoreConfiguration.cs" />
     <Compile Include="Net4Collections.cs" />
